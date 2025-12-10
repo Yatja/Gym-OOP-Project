@@ -1,2 +1,4 @@
 # Gym-OOP-Project
-This project created by 1 year student of computer science. (JAVA)
+This project created by 1 year student of computer science.
+Language:Java
+Topic:Gym
