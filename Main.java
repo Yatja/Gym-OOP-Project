@@ -28,13 +28,13 @@ public class Main {
             System.out.println("0. Exit");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // after nextInt
+            scanner.nextLine();
 
             switch (choice) {
 
                 case 1:
                     for (Person p : people) {
-                        p.showInfo(); // same method, different behavior
+                        p.showInfo(); 
                     }
                     break;
 
@@ -71,4 +71,5 @@ public class Main {
         }
     }
 }
+
 
