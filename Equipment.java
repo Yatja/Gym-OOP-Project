@@ -7,54 +7,26 @@ public class Equipment {
     private boolean available;
 
     public Equipment(int id, String name, String condition, boolean available) {
+        if (id <= 0) throw new IllegalArgumentException("ID must be positive");
+        if (name == null || name.isBlank()) throw new IllegalArgumentException("Name cannot be empty");
+        if (condition == null || condition.isBlank()) throw new IllegalArgumentException("Condition cannot be empty");
+
         this.id = id;
         this.name = name;
         this.condition = condition;
         this.available = available;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getCondition() {
-        return condition;
-    }
-
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setCondition(String condition) {
-        this.condition = condition;
-    }
-
-    public void setAvailable(boolean available) {
-        this.available = available;
-    }
-
-    public String toString() {
-        return "Gym_system.Equipment{id=" + id + ", name='" + name + "', condition='" + condition + "', available=" + available + "}";
-    }
-
     public void markAsBroken() {
         condition = "Broken";
         available = false;
     }
-    
     public boolean canBeUsed() {
         return available && !condition.equalsIgnoreCase("Broken");
     }
+    @Override
+    public String toString() {
+        return "Equipment{id=" + id + ", name='" + name + "', condition='" + condition + "', available=" + available + "}";
+    }
 }
+
+
