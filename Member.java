@@ -6,8 +6,8 @@ public class Member extends Person {
     private boolean active;
 
     public Member(int id, String name, int age, boolean active) {
-        super(id, name);   // super keyword (FIRST line)
-        setAge(age);       // constructor uses setter
+        super(id, name); 
+        setAge(age);     
         this.active = active;
     }
 
@@ -28,6 +28,7 @@ public class Member extends Person {
         active = false;
     }
 }
+
 
 
 
