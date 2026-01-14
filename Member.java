@@ -5,59 +5,27 @@ public class Member {
     private String name;
     private int age;
     private boolean active;
-
-
     public Member(int id, String name, int age, boolean active) {
+        if (id <= 0) throw new IllegalArgumentException("ID must be positive");
+        if (name == null || name.isBlank()) throw new IllegalArgumentException("Name cannot be empty");
+        if (age < 0) throw new IllegalArgumentException("Age cannot be negative");
+
         this.id = id;
         this.name = name;
         this.age = age;
         this.active = active;
     }
-
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
-    public String toString() {
-        return "Gym_system.Member{id=" + id + ", name='" + name + "', age=" + age + ", active=" + active + "}";
-    }
-
-    public boolean isAdult() {
-        return age >= 18;
-    }
-
     public void deactivate() {
         active = false;
     }
+    public boolean isAdult() {
+        return age >= 18;
+    }
+    @Override
+    public String toString() {
+        return "Member{id=" + id + ", name='" + name + "', age=" + age + ", active=" + active + "}";
+    }
 }
+
 
 
